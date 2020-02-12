@@ -14,7 +14,7 @@
 #####################################################
 
 # Run DSC:
-# commands: dsc -c 2 linreg.dsc --> replicate = 1
+# commands: dsc -c 2 linreg.dsc --> replicate = 20
 
 library(dscrutils)
 library(ggplot2)
@@ -23,8 +23,8 @@ source("code/plots.R")
 
 
 methods <- c("ridge","lasso","elastic_net","susie","varbvs","varbvsmix")
-dsc <- dscquery("dsc/linreg",c("fit","simulate","mse.err", "simulate.scenario"), # CHANGED!
-                verbose = FALSE)
+dsc <- dscquery("dsc/linreg",c("simulate","fit", "mse.err"), 
+                "simulate.scenario", verbose = FALSE)
 head(dsc)
 dim(dsc)
 
