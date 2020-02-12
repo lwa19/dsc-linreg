@@ -23,17 +23,18 @@ source("code/plots.R")
 
 
 methods <- c("ridge","lasso","elastic_net","susie","varbvs","varbvsmix")
-dsc <- dscquery("dsc/linreg",c("simulate","fit", "mse.err"), 
-                "simulate.scenario", verbose = FALSE)
+dsc <- dscquery("dsc/linreg",c("simulate","fit", "mse.err", "simulate.scenario"),
+                verbose = FALSE)
 head(dsc)
 dim(dsc)
 
 dsc <- dsc[c("DSC","simulate","simulate.scenario","fit","mse.err")]
 dsc <- transform(dsc,
                  simulate = factor(simulate),
+                 simulate.scenario = factor(simulate.scenario),
                  fit      = factor(fit,methods))
 names(dsc)[1] <- "seed"
-nrow(dsc)
+nrow(dsc)  #720, with 20 replication done locally
 
 # summarize results:
 rmse <- compute.relative.mse(dsc)
