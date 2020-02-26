@@ -4,3 +4,5 @@ dsc/linreg.html
 dsc/linreg.scripts.html
 **/.sos
 .Rproj.user
+.DS_Store
+.Rhistory

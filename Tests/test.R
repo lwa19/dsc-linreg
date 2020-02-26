@@ -1,4 +1,4 @@
-# Testing DSC linreg
+# Testing DSC linreg -- LW
 
 #####################################################
 # Installation (run once)
