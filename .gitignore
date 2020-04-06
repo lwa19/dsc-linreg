@@ -6,3 +6,8 @@ dsc/linreg.scripts.html
 .Rproj.user
 .DS_Store
 .Rhistory
+*.rds
+dsc/.DS_Store
+dsc/.DS_Store
+dsc/modules/.DS_Store
+Tests/.RData
